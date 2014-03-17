@@ -1,4 +1,4 @@
-angular.module('app', ['ngResource', 'ngRoute'])
+angular.module('app', ['ngResource', 'ngRoute',   'ngProgress'])
   .config(function($routeProvider, $locationProvider) {
     var routeRoleChecks = {
       admin: { auth: function (mvAuth) {
@@ -34,7 +34,16 @@ angular.module('app', ['ngResource', 'ngRoute'])
       });
   });
 
-  angular.module('app').run(function ($rootScope, $location) {
+  angular.module('app').run(function ($rootScope, $location, ngProgress) {
+
+    $rootScope.$on('$routeChangeStart', function() {
+      ngProgress.start();
+    });
+
+    $rootScope.$on('$routeChangeSuccess', function() {
+      ngProgress.complete();
+    });
+
     $rootScope.$on('$routeChangeError', function (evt, current, previous, rejection) {
       if (rejection === 'not authorized') {
         $location.path('/');
