@@ -1,0 +1,33 @@
+section.post.article_section
+	ol.breadcrumb
+		li
+			a(href="/articles") Articles
+		li.active Administration
+	div.alert.alert-danger(ng-show="message.is_error") {{message.message}}
+	div.alert.alert-danger(ng-show="message.is_success") {{message.message}}
+
+	a.btn.btn-success(href="/admin/articles/create") Create a new post
+
+	table.table.table-condensed.table-hover
+		thead
+			tr
+				th Title
+				th Read Numbers
+				th Created
+				th Last Update
+				th Action
+		tbody
+			tr(ng-repeat="post in posts")
+				td {{post.title}}
+				td {{post.read}}
+				td {{post.created | date:'medium'}}
+				td {{post.updated | date:'medium'}}
+				td
+					button.btn.btn-warning.btn-xs(ng-show="post.is_published" ng-click="updatePublishState(post, false)")
+						span.glyphicon.glyphicon-eye-close
+					button.btn.btn-success.btn-xs(ng-show="!post.is_published" ng-click="updatePublishState(post, true)")
+						span.glyphicon.glyphicon-eye-open
+					a.btn.btn-warning.btn-xs(href="/admin/articles/edit/{{post._id}}")
+						span.glyphicon.glyphicon-edit
+					button.btn.btn-danger.btn-xs(ng-click="deletePost(post._id)")
+						span.glyphicon.glyphicon-trash

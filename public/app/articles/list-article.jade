@@ -1,0 +1,16 @@
+section.article_section(ng-repeat="post in posts")
+    header.post-header
+        h2.post-title
+            a(href="/post/{{post._id}}") {{post.title}}
+        div.post-meta 
+            span.glyphicon.glyphicon-time &nbsp;
+            strong Posted on {{post.created | date:'medium'}}
+        div.post-meta
+            ul.list-inline
+                span.glyphicon.glyphicon-tags(style="margin-left: 5px") &nbsp;
+                li(ng-repeat="tag in post.tags")
+                    a.label.label-success(href="/articles/tag/{{tag}}") {{tag}}
+    div.post-content
+        p(ng-bind-html="post.content") {{post.content}}
+        a.btn.btn-primary(href="/articles/{{post._id}}") Read More
+    hr.style-two

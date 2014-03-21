@@ -31,6 +31,26 @@ angular.module('app', ['ngResource', 'ngRoute',   'ngProgress'])
       }).when('/courses/:id', {
         templateUrl: '/partials/courses/course-details',
         controller: 'mvCourseDetailCtrl'
+      }).when('/articles', {
+        templateUrl: '/partials/articles/list-article',
+        controller: 'mvListArticleCtrl'
+      }).when('/articles/tag/:tagName', {
+        templateUrl: '/partials/articles/list-article',
+        controller: 'mvListTagArticleCtrl'
+      }).when('/articles/:id', {
+        templateUrl: '/partials/articles/view-article',
+        controller: 'mvViewArticleCtrl'
+      }).when('/admin/articles/create', {
+        templateUrl: '/partials/articles/admin-post-create',
+        controller: 'mvAdminPostCreateCtrl'
+      }).when('/admin/articles/list', {
+        templateUrl: '/partials/articles/admin-post-list',
+        controller: 'mvAdminPostListCtrl',
+        resolve: routeRoleChecks.admin
+      }).when('/admin/articles/edit/:id', {
+        templateUrl: '/partials/articles/admin-post-edit',
+        controller: 'mvAdminPostEditCtrl',
+        resolve: routeRoleChecks.admin
       });
   });
 

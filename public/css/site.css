@@ -13,3 +13,42 @@
 .margin-left-med {
   margin-left: 10px;
 }
+.article_section {
+  padding-left: 110px;
+  padding-right: 110px;
+}
+.post-header {
+  margin: 0 0 1.8em;
+}
+.post-title {
+  color: #222;
+  font-size: 1.8em;
+  margin: 0 0 0.2em;
+}
+.post-avatar {
+  border-radius: 50%;
+  float: right;
+  margin-left: 1em;
+}
+.post-meta {
+  color: #999;
+  font-size: 90%;
+  margin: 0;
+}
+.post-content {
+  color: #344151;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.15em;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.5em;
+  text-align: justify;
+}
+hr.style-two {
+  border: 0;
+  height: 2px;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
