@@ -52,3 +52,33 @@ hr.style-two {
   background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
   background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
 }
+/*for password strength */
+input.ng-pristine + ul#strength {
+  display: none;
+}
+ul#strength {
+  display: inline;
+  list-style: none;
+  margin: 0;
+  margin-left: 15px;
+  padding: 0;
+  vertical-align: 2px;
+}
+.point:last {
+  margin: 0 !important;
+}
+.point {
+  background: #ddd;
+  border-radius: 2px;
+  display: inline-block;
+  height: 5px;
+  margin-right: 1px;
+  width: 20px;
+}
+.msg-block {
+  margin-top: 5px;
+}
+.msg-error {
+  color: #f00;
+  font-size: 14px;
+}
