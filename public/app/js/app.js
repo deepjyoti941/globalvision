@@ -9,7 +9,7 @@ angular.module('app', ['ngResource', 'ngRoute',   'ngProgress'])
       }}
     };
 
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
     $routeProvider
       .when('/', {
         templateUrl: '/partials/main/main',
